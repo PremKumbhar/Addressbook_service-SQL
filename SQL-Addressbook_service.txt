@@ -99,3 +99,15 @@ mysql> SELECT COUNT(*) FROM address_book WHERE city = 'Pune' or state = 'Maharas
 +----------+
 1 row in set (0.01 sec)
 -----------------------------------------------------------------------------------------------------------------------------------------
+//UC7:
+
+mysql> SELECT * FROM address_book WHERE city = 'Pune' ORDER BY first_name;
++------------+-----------+---------+------+-------------+--------+--------------+-------------------+
+| first_name | last_name | address | city | state       | zip    | phone_number | email             |
++------------+-----------+---------+------+-------------+--------+--------------+-------------------+
+| Prem       | Kumbhar   | Pune    | Pune | Maharastra  | 416001 | 9099999990   | premk@gmail.com   |
+| Rohit      | Kumbhar   | pune    | pune | maharashtra | 123456 | 9090909077   | Rohit@gmail.com   |
+| Sushant    | Patil     | pune    | pune | maharashtra | 123456 | 9090909099   | Sushant@gmail.com |
++------------+-----------+---------+------+-------------+--------+--------------+-------------------+
+3 rows in set (0.01 sec)
+------------------------------------------------------------------------------------------------------------------------------------------
