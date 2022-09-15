@@ -152,3 +152,26 @@ mysql> SELECT COUNT(*) FROM address_book GROUP BY type;
 +----------+
 3 rows in set (0.04 sec)
 -----------------------------------------------------------------------------------------------------------------------------------------
+//UC11:
+
+mysql> INSERT INTO address_book VALUES('Ranjit', 'Patil', 'Pune', 'Pune', 'Maharastra', '123456', '9090909066', 'ranjit@gmail.com', 'Family');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO address_book VALUES('Ranjit', 'Patil', 'Pune', 'Pune', 'Maharastra', '123456', '9090909066', 'ranjit@gmail.com', 'Friend');
+Query OK, 1 row affected (0.01 sec)
+
+
+mysql> SELECT * FROM address_book;
++------------+-----------+----------+----------+-------------+--------+--------------+----------------------+---------+
+| first_name | last_name | address  | city     | state       | zip    | phone_number | email                | type    |
++------------+-----------+----------+----------+-------------+--------+--------------+----------------------+---------+
+| Prem       | Kumbhar   | Pune     | Pune     | Maharastra  | 416001 | 9099999990   | premk@gmail.com      | NULL    |
+| Prathmesh  | Kumbhar   | Kolhapur | Kolhapur | Maharastra  | 416001 | 9099999988   | prathmeshk@gmail.com | Brother |
+| Sushant    | Patil     | pune     | pune     | maharashtra | 123456 | 9090909099   | Sushant@gmail.com    | Friend  |
+| Rohit      | Kumbhar   | pune     | pune     | maharashtra | 123456 | 9090909077   | Rohit@gmail.com      | Friend  |
+| Ranjit     | Patil     | Pune     | Pune     | Maharastra  | 123456 | 9090909066   | ranjit@gmail.com     | Family  |
+| Ranjit     | Patil     | Pune     | Pune     | Maharastra  | 123456 | 9090909066   | ranjit@gmail.com     | Friend  |
++------------+-----------+----------+----------+-------------+--------+--------------+----------------------+---------+
+6 rows in set (0.00 sec)
+
+------------------------------------------------------------------------------------------------------------------------------------------
