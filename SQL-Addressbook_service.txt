@@ -99,7 +99,7 @@ mysql> SELECT COUNT(*) FROM address_book WHERE city = 'Pune' or state = 'Maharas
 +----------+
 1 row in set (0.01 sec)
 -----------------------------------------------------------------------------------------------------------------------------------------
-//UC7:
+//UC8:
 
 mysql> SELECT * FROM address_book WHERE city = 'Pune' ORDER BY first_name;
 +------------+-----------+---------+------+-------------+--------+--------------+-------------------+
@@ -111,3 +111,32 @@ mysql> SELECT * FROM address_book WHERE city = 'Pune' ORDER BY first_name;
 +------------+-----------+---------+------+-------------+--------+--------------+-------------------+
 3 rows in set (0.01 sec)
 ------------------------------------------------------------------------------------------------------------------------------------------
+//UC9:
+
+mysql> ALTER TABLE address_book ADD type varchar(50) AFTER email;
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> UPDATE address_book SET type = 'Brother' WHERE first_name = 'Prathmesh';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE address_book SET type = 'Friend' WHERE first_name = 'Sushant';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE address_book SET type = 'Friend' WHERE first_name = 'Rohit';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * from address_book;
++------------+-----------+----------+----------+-------------+--------+--------------+----------------------+---------+
+| first_name | last_name | address  | city     | state       | zip    | phone_number | email                | type    |
++------------+-----------+----------+----------+-------------+--------+--------------+----------------------+---------+
+| Prem       | Kumbhar   | Pune     | Pune     | Maharastra  | 416001 | 9099999990   | premk@gmail.com      | NULL    |
+| Prathmesh  | Kumbhar   | Kolhapur | Kolhapur | Maharastra  | 416001 | 9099999988   | prathmeshk@gmail.com | Brother |
+| Sushant    | Patil     | pune     | pune     | maharashtra | 123456 | 9090909099   | Sushant@gmail.com    | Friend  |
+| Rohit      | Kumbhar   | pune     | pune     | maharashtra | 123456 | 9090909077   | Rohit@gmail.com      | Friend  |
++------------+-----------+----------+----------+-------------+--------+--------------+----------------------+---------+
+4 rows in set (0.00 sec)
+-----------------------------------------------------------------------------------------------------------------------------------------
