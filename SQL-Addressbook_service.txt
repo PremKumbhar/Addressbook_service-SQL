@@ -1,0 +1,22 @@
+//UC1:
+
+mysql> CREATE DATABASE addressbook_service;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++---------------------+
+| Database            |
++---------------------+
+| addressbook_service |
+| information_schema  |
+| mysql               |
+| payroll_service     |
+| performance_schema  |
+| sakila              |
+| sampledatabase1     |
+| sampledatabase2     |
+| sys                 |
+| world               |
++---------------------+
+10 rows in set (0.02 sec)
+------------------------------------------------------------------------------------------------------------------------------------------
