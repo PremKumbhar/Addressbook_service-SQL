@@ -40,3 +40,17 @@ Query OK, 0 rows affected (0.04 sec)
 mysql> INSERT INTO address_book VALUES('Prem', 'Kumbhar', 'Kolhapur', 'Kolhapur', 'Maharastra', '416001', '9099999990', 'premk@gmail.com');
 Query OK, 1 row affected (0.02 sec)
 -------------------------------------------------------------------------------------------------------------------------------------------
+//UC4:
+
+mysql> UPDATE address_book set address = 'Pune', city = 'Pune' WHERE first_name = 'Prem';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * from address_book;
++------------+-----------+---------+------+------------+--------+--------------+-----------------+
+| first_name | last_name | address | city | state      | zip    | phone_number | email           |
++------------+-----------+---------+------+------------+--------+--------------+-----------------+
+| Prem       | Kumbhar   | Pune    | Pune | Maharastra | 416001 | 9099999990   | premk@gmail.com |
++------------+-----------+---------+------+------------+--------+--------------+-----------------+
+1 row in set (0.00 sec)
+------------------------------------------------------------------------------------------------------------------------------------------
